@@ -1,0 +1,81 @@
+<html>
+	<head>
+ 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+				<link rel="preconnect" href="http://web.archive.org/web/20210719090206/https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>File Structure of PE and ELF Explained</title>
+		<style>
+			body {
+				font-family: 'VT323', monospace; 
+			}
+			.row:after {
+  				content: "";
+  				display: table;
+  				clear: both;
+			}
+			.leftcolumn {   
+  				float: left;
+  				width: 30%;
+			}
+			.rightcolumn {
+  				float: left;
+  				width: 70%;
+				padding-left: 0px;
+			}
+			@media screen and (max-width: 800px) {
+ 				 .leftcolumn, .rightcolumn {   
+    			width: 100%;
+    			padding: 0;
+ 				 }
+			}
+			pre { overflow:auto }
+			.fa-coffee,.fa-code, .fa-github, .fa-windows, .fa-linux {font-size:200px;color:Grey}
+			.fa-folder {color:lightblue}
+		</style>
+    </head>
+    
+    <body>
+		<h1>File Structure of PE and ELF Explained</h1>
+		<h3>August 7, 2021</h3>
+		
+		<div class="row">
+			<div class="leftcolumn">
+				<i class="fa fa-windows"></i>
+			</div>
+			<div class="rightcolumn">
+				<p>Hi everyone! Today, I am going to show you the minimal file structure of two popular binary executable format. Windows (PE) and Linux (ELF).</p>
+				<h2>Windows</h2>
+				<p>Let's take a look at Windows PE file format:</p>
+				<h3>PE:</h3>
+				<img src="pe.jpg" width=90%>
+				<p>Please note that Code Section and Data Section is minimum 512 bytes each, or power of two to the multiple of 512 as required by File Alignment setting in File Header.</p>
+				<p>As its name implies, Code Section contains all machine code (normally Intel x86 or AMD64 CPU architecture opcodes) while Data Section contains all data values. A functional PE should have Import Table referencing to either <span style="background-color:lightgrey">kernel32.dll</span> or <span style="background-color:lightgrey">user32.dll</span> or both.</p>
+				<p>For ordinary EXE, you can always ignore the checksum and timestamp in File Header.</p>
+			</div>
+			<div class="leftcolumn">
+				<i class="fa fa-linux"></i>
+			</div>
+			<div class="rightcolumn">
+				<h2>Linux</h2>
+				<p>Now, it's time to look at ELF32/64 binary file format.</p>
+				<h3>ELF:</h3>
+				<img src="elf.png" width=90%>
+				<p>ELF file format is smaller compared to that of PE. A functional "Hello World!" ELF64 binary file could be well below 200 bytes, compared to a similar "Hello World!" (CUI) PE binary file which is about 2048 bytes (or 1024 bytes if you combine three section altogether).</p>
+				<p>The similarity between these two binary file formats is each Code Segment or Code Section and Data Segment or Data Section has respective headers.</p>
+				<p>These binary file formats have existed for more than 20 years and have not changed much since then.</p>
+				<p>Tiny executable file like a 2048-byte portable executable (PE) is often falsely detected by antivirus software as trojan or malware.</p>
+				<h2>Conclusion</h2>
+				<p>I hope you already get the preliminary idea about the file structure of two popular binary executable format.</p>
+				<p>As for me, PE file format even in its minimal form is way more complex than ELF file format.</p>
+			</div>
+		</div>
+		
+		<hr>
+		<center><h3>Copyright © 2021 Boo Khan Ming</h3></center>
+		
+    </body>
+</html>
