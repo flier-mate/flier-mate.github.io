@@ -1,0 +1,81 @@
+<html>
+	<head>
+ 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+				<link rel="preconnect" href="http://web.archive.org/web/20210719090206/https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>BGGP/2020/BGGPCOM</title>
+		<style>
+			body {
+				font-family: 'VT323', monospace; 
+			}
+			.row:after {
+  				content: "";
+  				display: table;
+  				clear: both;
+			}
+			.leftcolumn {   
+  				float: left;
+  				width: 30%;
+			}
+			.rightcolumn {
+  				float: left;
+  				width: 70%;
+				padding-left: 0px;
+			}
+			@media screen and (max-width: 800px) {
+ 				 .leftcolumn, .rightcolumn {   
+    			width: 100%;
+    			padding: 0;
+ 				 }
+			}
+			.pre { overflow:auto; background-color:lightgrey }
+			.fa-coffee,.fa-code, .fa-github {font-size:200px;color:Grey}
+			.fa-folder {color:lightblue}
+		</style>
+    </head>
+    
+    <body>
+		<h1><a href="https://github.com/netspooky">netspooky</a> / <a href="https://github.com/netspooky/BGGP">BGGP</a></h1>
+		<div class="row">
+			<div class="leftcolumn">
+				<i class="fa fa-github"></i>
+			</div>
+			<div class="rightcolumn">
+				<h2><a href="index.html">BGGP</a> / <a href="2020.html">2020</a> / BGGPCOM</h2>
+				<h3><i class="fa fa-file"></i> BGGP.ASM</h3>
+				<h3><i class="fa fa-file"></i> BGGP.COM</h3>
+				<hr>				
+				<h2><a href="https://github.com/netspooky/BGGP/tree/main/2020/BGGPCOM">BGGP</a> <i class="fa fa-external-link"></i></h2>
+				<p>Binary Golf Grand Prix</p>
+				<p>This x86 DOS .COM executable will display a blinking É character at the center of the console screen.</p>
+				<p>The memory address of text mode screen is B800:0, so 0x7D0 (2000th) byte will be pointing to the center of a 80x25 console screen. (Remember each character has a pair of two bytes, ASCII value followed by color code)</p>
+				<p>Thanks @netspooky for giving me this opportunity to submit my entry. I accidentally found out his inaugural challenge of BGGP while searching for my full name. I did not know that my ASM code titled 'Horizontal Slice' is featured on <a href="https://github.com/netspooky/hardcode/tree/master/00128/dos/horizontal%20slice">https://github.com/netspooky/hardcode/tree/master/00128/dos/horizontal%20slice</a></p>
+				<p class="pre">
+JMP 103&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EB01<br>
+RET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C3<br>
+MOV AX, B800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B800B8<br>
+MOV ES, AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8EC0<br>
+MOV DI, 07D0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BFD007<br>
+MOV AX, 9090&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B89090<br>
+MOV ES:[DI], AX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;268905<br>
+ADD AX, 2689&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;058926<br>
+NOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90<br>
+NOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90<br>
+MOV AX, D007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B807D0<br>
+MOV DI, 8EC0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BFC08E<br>
+MOV AX, B800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B800B8<br>
+RET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C3<br>
+ADD BX, BP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01EB<br>
+				</p>
+			</div>
+		</div>
+		
+		<hr>
+		<center><h3>Courtesy of Boo Khan Ming</h3></center>
+		
+    </body>
+</html>

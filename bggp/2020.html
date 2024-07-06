@@ -1,0 +1,114 @@
+<html>
+	<head>
+ 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+				<link rel="preconnect" href="http://web.archive.org/web/20210719090206/https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>BGGP/2020</title>
+		<style>
+			body {
+				font-family: 'VT323', monospace; 
+			}
+			.row:after {
+  				content: "";
+  				display: table;
+  				clear: both;
+			}
+			.leftcolumn {   
+  				float: left;
+  				width: 30%;
+			}
+			.rightcolumn {
+  				float: left;
+  				width: 70%;
+				padding-left: 0px;
+			}
+			@media screen and (max-width: 800px) {
+ 				 .leftcolumn, .rightcolumn {   
+    			width: 100%;
+    			padding: 0;
+ 				 }
+			}
+			table, th, td {
+ 				 border: 1px solid black;
+			}
+			.fa-coffee,.fa-code, .fa-github {font-size:200px;color:Grey}
+			.fa-folder {color:lightblue}
+		</style>
+    </head>
+    
+    <body>
+		<h1><a href="https://github.com/netspooky">netspooky</a> / <a href="https://github.com/netspooky/BGGP">BGGP</a></h1>
+		
+		<div class="row">
+			<div class="leftcolumn">
+				<i class="fa fa-github"></i>
+			</div>
+			<div class="rightcolumn">
+				<h2><a href="index.html">BGGP</a> / 2020 /</h2>
+				<h3><i class="fa fa-folder"></i> <a href="1.html">BGGPCOM</a></h3>
+				<h3><i class="fa fa-folder"></i> <a href="2.html">bootnoodle</a></h3>
+				<h3><i class="fa fa-folder"></i> <a href="3.html">ns.BGGP</a></h3>
+				<h3><i class="fa fa-folder"></i> <a href="4.html">vizpalapziv</a></h3>
+				<hr>				
+				<h2><a href="https://github.com/netspooky/BGGP/tree/main/2020">BGGP 2020</a> <i class="fa fa-external-link"></i></h2>
+				<p>This was the first annual Binary Golf Grand Prix, which took place June 22nd - August 28th 2020. The goal was to create a binary that executed the same backwards as it did forwards. See https://n0.lol/bggp/ for more details!</p>
+				<p>The entries were as follows:</p>
+				<div style="overflow:auto">
+				<table>
+ 					<tr>
+    					<th>File</th>
+    					<th>Author</th>
+    					<th>Description</th>
+						<th>Size (Bytes)</th>
+						<th>Execution Ratio</th>
+						<th>Writeup</th>
+  					</tr>
+  					<tr>
+						<td>bootnoodle.img</td>
+						<td><a href="https://twitter.com/TheXcellerator">xcellerator</a></td>
+						<td>x86 Bootloader</td>
+						<td>512</td>
+						<td>83 bytes out of 512 (16.21%)</td>
+						<td><a href="https://xcellerator.github.io/posts/bggp/">https://xcellerator.github.io/posts/bggp/</a></td>
+   					</tr>
+  					<tr>
+						<td>ns.bggp</td>
+						<td><a href="https://twitter.com/netspooky">netspooky</a></td>
+						<td>64 bit ELF</td>
+						<td>245</td>
+						<td>90 out of 245 (36.73%)</td>
+						<td><a href="https://n0.lol/bggp/writeup.html">https://n0.lol/bggp/writeup.html</a></td>
+   					</tr>		
+  					<tr>
+						<td>vizpalapziv.prg</td>
+						<td><a href="https://twitter.com/viznut">viznut</a></td>
+						<td>Commodore VIC-20 PRG</td>
+						<td>20</td>
+						<td>18 out of 20 (90%)</td>
+						<td><a href="http://viznut.fi/demos/vic20/vizpalapziv.html">http://viznut.fi/demos/vic20/vizpalapziv.html</a></td>
+   					</tr>
+  					<tr>
+						<td>BGGP.COM (Winner)</td>
+						<td>Boo Khan Ming</td>
+						<td>DOS COM File</td>
+						<td>34</td>
+						<td>31 out of 34 (91.17%)</td>
+						<td>See folder</td>
+   					</tr>					
+				</table>
+				</div>
+				<p>A video walk through of the entries is here: <a href="https://youtu.be/s0TS2kZtcGk">https://youtu.be/s0TS2kZtcGk</a></p>
+				<p>See each folder for source and additional notes.</p>
+				<img src="results.png" width=90%>
+			</div>
+		</div>
+		
+		<hr>
+		<center><h3>Courtesy of Boo Khan Ming</h3></center>
+		
+    </body>
+</html>

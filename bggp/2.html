@@ -1,0 +1,81 @@
+<html>
+	<head>
+ 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+				<link rel="preconnect" href="http://web.archive.org/web/20210719090206/https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>BGGP/2020/bootnoodle</title>
+		<style>
+			body {
+				font-family: 'VT323', monospace; 
+			}
+			.row:after {
+  				content: "";
+  				display: table;
+  				clear: both;
+			}
+			.leftcolumn {   
+  				float: left;
+  				width: 30%;
+			}
+			.rightcolumn {
+  				float: left;
+  				width: 70%;
+				padding-left: 0px;
+			}
+			@media screen and (max-width: 800px) {
+ 				 .leftcolumn, .rightcolumn {   
+    			width: 100%;
+    			padding: 0;
+ 				 }
+			}
+			pre { overflow:auto }
+			.fa-coffee,.fa-code, .fa-github {font-size:200px;color:Grey}
+			.fa-folder {color:lightblue}
+		</style>
+    </head>
+    
+    <body>
+		<h1><a href="https://github.com/netspooky">netspooky</a> / <a href="https://github.com/netspooky/BGGP">BGGP</a></h1>
+		
+		<div class="row">
+			<div class="leftcolumn">
+				<i class="fa fa-github"></i>
+			</div>
+			<div class="rightcolumn">
+				<h2><a href="index.html">BGGP</a> / <a href="2020.html">2020</a> / bootnoodle</h2>
+				<h3><i class="fa fa-folder"></i> <a href="2-1.html">bin</a></h3>
+				<h3><i class="fa fa-folder"></i> <a href="2-2.html">src</a></h3>
+				<h3><i class="fa fa-file"></i> build.sh</h3>
+				<h3><i class="fa fa-file"></i> sums.sh</h3>
+				<hr>				
+				<h2><a href="https://github.com/netspooky/BGGP/tree/main/2020/bootnoodle">BootNoodle</a> <i class="fa fa-external-link"></i></h2>
+				<h3>A Palindromic Bootloader for <a href="https://n0.lol/bggp/">BGGP</a></h3>
+				<p>So named because the execution flow jumps around between reversed and non-reversed op codes in a noodly-tangle.</p>
+				<p>Please find a write-up of how I built this bootloader here: <a href="https://xcellerator.github.io/posts/bggp/">xcellerator.github.io</a></p>
+				<img src="bootnoodle.png" width=90%>
+				<h4>Submission</h4>
+				<p>Binary: <a href="https://github.com/netspooky/BGGP/blob/main/2020/bootnoodle/bin/bootnoodle.bin">bin/bootnoodle.bin</a></p>
+				<p>Source: <a href="https://github.com/netspooky/BGGP/blob/main/2020/bootnoodle/src/bootnoodle.asm">src/bootnoodle.asm</a></p>
+				<h4>Build Instructions</h4>
+				<ul>
+					<li>Run <a href="https://github.com/netspooky/BGGP/blob/main/2020/bootnoodle/build.sh">build.sh</a> after cloning</li>
+					<li>Check sums below with <a href="https://github.com/netspooky/BGGP/blob/main/2020/bootnoodle/sums.sh">sums.sh</a></li>
+					<li>Run with <span style="background-color:lightgrey">qemu-system-x86_64 bin/bootnoodle.bin</span></li>
+				</ul>
+				<h4>SHA256 Sums</h4>
+				<ul>
+					<li>Forward: <span style="background-color:lightgrey">afd35223493930d7ea455b2352627783bfd53ddc54789cc3d81137da1ec3ac51</span></li>
+					<li>Backward: <span style="background-color:lightgrey">afd35223493930d7ea455b2352627783bfd53ddc54789cc3d81137da1ec3ac51</span></li>
+				</ul>
+			</div>
+		</div>
+		
+		<hr>
+		<center><h3>Courtesy of Boo Khan Ming</h3></center>
+		
+    </body>
+</html>
